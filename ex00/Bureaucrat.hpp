@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 19:51:56 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/24 20:55:01 by luifer           ###   ########.fr       */
+/*   Updated: 2025/06/26 00:29:06 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@
 class Bureaucrat
 {
     private:
+    Bureaucrat();// Default constructor
     const std::string _name;
     int _grade;
-    static const int _minGrade = 1;
-    static const int _maxGrade = 150;
 
     public:
-        Bureaucrat();// Default constructor
         Bureaucrat(int grade, const str::string& name); // Constructor with parameters
         Bureaucrat(const Bureaucrat& other); // Copy constructor
         Bureaucrat& operator=(const Bureaucrat& other); // Assignment operator constructor
         ~Bureaucrat(); // Destructor
+        static const int _minGrade = 1;
+        static const int _maxGrade = 150;
 
         //Getters
         const std::string& getName() const;
@@ -41,7 +41,16 @@ class Bureaucrat
         void decreaseGrade();
 
         //Exception classes
-        cl
+        class GradeTooHighException: public std::exception{
+            public:
+                const char* what() const throw();
+        };
+        class GradeTooLowException: public std::exception{
+            public:
+                const char* what() const throw();
+        };
 };
+
+std:ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 
 #endif
