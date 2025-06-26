@@ -6,16 +6,21 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 19:51:56 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 00:29:06 by luifer           ###   ########.fr       */
+/*   Updated: 2025/06/26 13:31:59 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-# include <iostream>
-# include <string>
-# include <exception>
+#include <iostream>
+#include <string>
+#include <exception>
+
+#define BLUE "\e[1;94m"
+#define RED "\e[1;91m"
+#define GREEN "\e[1;92m"
+#define RESET "\033[0m"
 
 class Bureaucrat
 {
