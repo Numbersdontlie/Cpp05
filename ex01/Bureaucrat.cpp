@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:30:16 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 14:40:47 by luifer           ###   ########.fr       */
+/*   Updated: 2025/06/26 21:37:09 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,13 @@ void Bureaucrat::decreaseGrade() {
 }
 
 // method to sign a form from Bureaucrat class
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(Form& form) {
     try {
         form.beSigned(*this);
-        std::cout << BLUE << this->getName() << " signs " << form.getName() << "." << RESET << std::endl;
+        std::cout << BLUE << _name << " signs " << form.getName() << "." << RESET << std::endl;
     }
     catch (const std::exception &e) {
-        std::cerr << RED << this->getName() << " cannot sign " << form.getName() << " because: " << e.what() << RESET << std::endl;
+        std::cerr << RED << _name << " cannot sign " << form.getName() << " because: " << e.what() << RESET << std::endl;
     }
 }
 

@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 19:51:56 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 14:33:23 by luifer           ###   ########.fr       */
+/*   Updated: 2025/06/26 21:40:09 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ class Bureaucrat
         //Methods to increase or decrease
         void increaseGrade();
         void decreaseGrade();
+
+        //Method to sign a form
+        void signForm(Form &form);
 
         //Exception classes
         class GradeTooHighException: public std::exception{

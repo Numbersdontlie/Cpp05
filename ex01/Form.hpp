@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:52:20 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 14:30:01 by luifer           ###   ########.fr       */
+/*   Updated: 2025/06/26 21:43:31 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #define RED "\e[1;91m"
 #define GREEN "\e[1;92m"
 #define RESET "\033[0m"
+
+class Bureaucrat; // Forward declaration to avoid circular dependency
 
 class Form {
     private:
@@ -45,7 +47,7 @@ class Form {
         int getExecuteGrade() const;
 
         // Methods
-        void beSigned(const Bureaucrat &bureaucrat);
+        void beSigned(const Bureaucrat& bureaucrat);
 
         //Exceptions classes
         class GradeTooHighException: public std::exception {
