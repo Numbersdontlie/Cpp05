@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 19:51:56 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 13:31:59 by luifer           ###   ########.fr       */
+/*   Updated: 2025/06/26 13:45:23 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class Bureaucrat
     int _grade;
 
     public:
-        Bureaucrat(int grade, const str::string& name); // Constructor with parameters
+        Bureaucrat(int grade, const std::string &name); // Constructor with parameters
         Bureaucrat(const Bureaucrat& other); // Copy constructor
-        Bureaucrat& operator=(const Bureaucrat& other); // Assignment operator constructor
+        Bureaucrat& operator=(const Bureaucrat &other); // Assignment operator constructor
         ~Bureaucrat(); // Destructor
         static const int _minGrade = 1;
         static const int _maxGrade = 150;
@@ -56,6 +56,6 @@ class Bureaucrat
         };
 };
 
-std:ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 
 #endif

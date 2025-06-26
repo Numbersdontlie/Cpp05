@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:30:16 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 13:31:58 by luifer           ###   ########.fr       */
+/*   Updated: 2025/06/26 13:46:34 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 }
 
 // destructor
-Bureucrat::~Bureaucrat() {
+Bureaucrat::~Bureaucrat() {
     std::cout << "Bureaucrat destructor called... BOOM!" << std::endl;
 }
 
@@ -48,7 +48,7 @@ const std::string& Bureaucrat::getName() const {
     return this->_name;
 }
 
-int Bureaucrat::getName() const {
+int Bureaucrat::getGrade() const {
     return this->_grade;
 }
 
