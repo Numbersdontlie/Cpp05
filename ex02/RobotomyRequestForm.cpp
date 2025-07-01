@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:39:06 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/01 23:15:09 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/01 23:22:38 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,22 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 //Destructor
 RobotomyRequestForm::~RobotomyRequestForm() {
     std::cout << RED << "RobotomyRequestForm destructor called 🤖 🤖 🤖" << RESET << std::endl;
+}
+
+
+// Getters
+const std::string &RobotomyRequestForm::getTarget() const {
+    return this->_target;
+}
+
+// Member function to execute the form
+void RobotomyRequestForm::execute() const {
+    srand(time(0)); //to generate random numbers
+    std::cout << GREEN << "Robotomy in progress frgrgyatzzzeerrmasnbjdabs 🔧 🔩 🪛 🔨" << RESET << std::endl;
+    if (std::rand() % 2 == 0) {
+        std::cout << GREEN << this->_target << "has been upgraded without problems 🤖" << RESET << std::endl;
+    }
+    else {
+        std::cout << RED << "Robotomy failed for " << this->_target << " 🤖 😿" << RESET << std::endl;
+    }
 }
