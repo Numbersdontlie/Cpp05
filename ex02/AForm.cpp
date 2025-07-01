@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:41:05 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 23:07:28 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/02 00:03:02 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ const char* AForm::GradeTooLowException::what() const throw() {
 }
 
 // Overloading the output operator
-std::ostream& operator<<(std::ostream &os, const Form &form) {
+std::ostream& operator<<(std::ostream &os, const AForm &form) {
     os << "Form Name: " << form.getName() << ", Signed: " << (form.getSigned() ? "Yes" : "No")
        << ", Sign Grade: " << form.getSignGrade() << ", Execute Grade: " << form.getExecuteGrade();
     return os;

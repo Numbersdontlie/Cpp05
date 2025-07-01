@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:30:16 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 21:37:09 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/01 23:59:17 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void Bureaucrat::decreaseGrade() {
 }
 
 // method to sign a form from Bureaucrat class
-void Bureaucrat::signForm(Form& form) {
+void Bureaucrat::signForm(AForm& form) {
     try {
         form.beSigned(*this);
         std::cout << BLUE << _name << " signs " << form.getName() << "." << RESET << std::endl;
