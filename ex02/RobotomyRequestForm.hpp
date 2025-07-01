@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 22:34:54 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 22:55:23 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/01 23:53:04 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,6 @@ class RobotomyRequestForm : public AForm {
 
     //Methods
     void execute() const;
-
-    //Exceptions classes
-    class RobotomyFailureException: public std::exception {
-        public:
-            const char* what() const throw() {
-            }
-    };
 };
 
 #endif

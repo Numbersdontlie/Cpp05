@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 22:34:25 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 22:49:09 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/01 23:55:33 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ class ShruberryCreationForm : public AForm {
     //Exceptions classes
     class ErrorFileException: public std::exception {
         public:
-            const char* what() const throw() {
-            }
+            const char* what() const throw();
     };
 
 };

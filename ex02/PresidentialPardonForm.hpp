@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 22:35:19 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 23:01:33 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/01 23:56:32 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 #define RESET "\033[0m"
 
 class PresidentialPardonForm : public AForm {
-    pivate:
+    private:
         std::string _target;
 
     public:
@@ -42,8 +42,7 @@ class PresidentialPardonForm : public AForm {
         //Exception classes
         class PardonFailureException: public std::exception {
             public:
-                const char* what() const throw(){
-                }
+                const char* what() const throw();
         };
 };
 

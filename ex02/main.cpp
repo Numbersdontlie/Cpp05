@@ -6,14 +6,14 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 23:35:33 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/01 23:49:25 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/01 23:57:10 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include "ShrubberryCreationForm.hpp"
+#include "ShruberryCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 
@@ -22,7 +22,7 @@ int main() {
     try {
         Bureaucrat luchito(147, "luchito");
 
-        ShrubberryCreationForm shrubbery("Home");
+        ShruberryCreationForm shrubbery("Home");
         //this should not work
         luchito.signForm(shrubbery);
         luchito.executeForm(shrubbery);

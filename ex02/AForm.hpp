@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:52:20 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 22:33:39 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/01 23:53:57 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class AForm {
     
     public:
         AForm(const std::string name, int signGrade, int execGrade);
-        AForm(const Form &other);
+        AForm(const AForm &other);
         virtual ~AForm();
 
         // Getters
@@ -66,6 +66,6 @@ class AForm {
         };
 };
 
-std::ostream& operator<<(std::ostream &os, const Form &form);
+std::ostream& operator<<(std::ostream &os, const AForm &form);
 
 #endif
