@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:52:20 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/02 00:07:20 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/02 22:54:03 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class AForm {
         const int _executeGrade;
     
     public:
-        AForm(const std::string name, int signGrade, int execGrade);
+        AForm(const std::string &name, int signGrade, int execGrade);
         AForm(const AForm &other);
         virtual ~AForm();
 

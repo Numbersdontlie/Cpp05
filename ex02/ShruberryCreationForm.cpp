@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:07:59 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 23:35:49 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/02 23:35:18 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ShruberryCreationForm::ShruberryCreationForm() : AForm("ShruberryCreationForm", 
 }
 
 //Parameterized constructor
-ShruberryCreationForm::ShruberryCreaytionForm(std::string target) : AForm("ShruberryCreationForm", 145, 137), _target(target) {
+ShruberryCreationForm::ShruberryCreaytionForm(const std::string &target) : AForm("ShruberryCreationForm", 145, 137), _target(target) {
     std::cout << BLUE << "ShruberryCreationForm parameterized constructor called" << RESET << std::endl;
 }
 
@@ -55,7 +55,7 @@ const char* ShruberryCreationForm::ErrorFileException::what() const throw() {
 void ShruberryCreationForm::execute() const {
     std::string filename = this->_target + "_shruberry";
     std::ofstream ofs(filename.c_str(), std::ios::app);
-    if (ofs.isopen()){
+    if (ofs.is_open()){
         ofs << "                                      " << std::endl;
         ofs << "          oxoxoo    ooxoo             " << std::endl;
         ofs << "        ooxoxo oo  oxoxooo            " << std::endl;

@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:39:06 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/01 23:23:23 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/02 23:21:12 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,14 @@ RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45)
 }
 
 // Parameterized constructor
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("RobotomyRequestForm", 72, 45), _target("default_target") {
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("RobotomyRequestForm", 72, 45), _target("target") {
     std::cout << BLUE << "RobotomyRequestForm parameterized constructor called 🤖 🤖 🤖" << RESET << std::endl;
     this->_target = target;
 }
 
 // Copy constructor
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other): AForm("RobotomyRequestForm", 72, 45), {
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other): AForm(other), _target(other._target) {
     std::cout << BLUE << "RobotomyRequestForm copy constructor called 🤖 🤖 🤖" << RESET << std::endl;
-    this->_target = other._target;
 }
 
 // Assignment operator

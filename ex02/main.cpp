@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 23:35:33 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/01 23:58:22 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/02 22:57:10 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main() {
     //Robotomy
     try {
         Bureaucrat farid(75, "farid");
-        RobotomyRequestForm robotomy("genau-bot");
+        RobotomyRequestForm robotomy("genaubot");
         farid.signForm(robotomy);
         farid.executeForm(robotomy);
         std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 22:34:54 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/01 23:53:04 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/02 23:02:54 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class RobotomyRequestForm : public AForm {
 
     public:
         RobotomyRequestForm(); // Default constructor
-        RobotomyRequestForm(std::string target); // Parameterized constructor
+        RobotomyRequestForm(const std::string &target); // Parameterized constructor
         RobotomyRequestForm(const RobotomyRequestForm &other); // Copy constructor
         RobotomyRequestForm& operator=(const RobotomyRequestForm& other); //operator= overload constructor
         ~RobotomyRequestForm();// Destructor

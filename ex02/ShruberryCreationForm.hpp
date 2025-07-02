@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 22:34:25 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/01 23:55:33 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/02 23:36:04 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ShruberryCreationForm : public AForm {
     
     public:
         ShruberryCreationForm(); // Default constructor
-        ShruberryCreationForm(std::string target); // Parameterized constructor
+        ShruberryCreationForm(const std::string &target); // Parameterized constructor
         ShruberryCreationForm(const ShruberryCreationForm &other); // Copy constructor
         ShruberryCreationForm& operator=(const ShruberryCreationForm& other);
         ~ShruberryCreationForm(); // Destructor
