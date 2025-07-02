@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:30:16 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/01 23:59:17 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/03 00:03:02 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,16 @@ void Bureaucrat::decreaseGrade() {
     if (this->_grade >= _maxGrade)
         throw GradeTooHighException();
     this->_grade++;
+}
+
+// method to execute a form from Bureaucrat class
+void Bureaucrat::executeForm(const AForm &form) const {
+    try {
+        form.execute();
+        std::cout << GREEN << this->_name << " executed " << form.getName() << "." << RESET << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << RED << this->_name << " couldn't execute " << form.getName() << " because: " << e.what() << RESET << std::endl;
+    }
 }
 
 // method to sign a form from Bureaucrat class
