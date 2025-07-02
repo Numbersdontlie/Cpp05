@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 19:51:56 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 22:33:43 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/02 23:43:45 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ class Bureaucrat
         void signForm(AForm &form);
 
         //Method to execute a form
-        void executeForm(const AForm &form);
+        void executeForm(const AForm &form) const;
 
         //Exception classes
         class GradeTooHighException: public std::exception{

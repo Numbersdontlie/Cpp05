@@ -6,7 +6,7 @@
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:07:59 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/02 23:35:18 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/02 23:41:48 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ ShruberryCreationForm::ShruberryCreationForm() : AForm("ShruberryCreationForm", 
 }
 
 //Parameterized constructor
-ShruberryCreationForm::ShruberryCreaytionForm(const std::string &target) : AForm("ShruberryCreationForm", 145, 137), _target(target) {
-    std::cout << BLUE << "ShruberryCreationForm parameterized constructor called" << RESET << std::endl;
+ShruberryCreationForm::ShruberryCreationForm(const std::string &target) : AForm("ShruberryCreationForm", 145, 137), _target(target) {
+    std::cout << BLUE << "ShruberryCreationForm parameterized constructor called 🌳 🌳 🌳" << RESET << std::endl;
 }
 
 //Copy constructor
@@ -28,8 +28,8 @@ ShruberryCreationForm::ShruberryCreationForm(const ShruberryCreationForm &other)
 }
 
 //Assignment operator overload
-ShruberryCreationForm::ShruberryCreationForm& ShruberryCreationForm::operator=(const ShruberryCreationForm &other){
-    std::cout << BLUE << "ShruberryCreationForm assignment operator called" << RESET << std::endl;
+ShruberryCreationForm& ShruberryCreationForm::operator=(const ShruberryCreationForm &other){
+    std::cout << BLUE << "ShruberryCreationForm assignment operator called 🌳 🌳 🌳" << RESET << std::endl;
     if (this != &other) {
         this->_target = other.getTarget(); // Copy the target
     }
@@ -62,14 +62,14 @@ void ShruberryCreationForm::execute() const {
         ofs << "        oooo xxoxoo ooo ooox          " << std::endl;
         ofs << "        oxo o oxoxo  xoxxoxo          " << std::endl;
         ofs << "        oxo xooxoooo o ooo            " << std::endl;
-        ofs << "            ooo\oo\  /o/o             " << std::endl;
-        ofs << "                \  \/ /               " << std::endl;
+        ofs << "          ooo\\oo\\  /o/o             " << std::endl;
+        ofs << "              \\  \\/ /               " << std::endl;
         ofs << "                |   /                 " << std::endl;
         ofs << "                |  |                  " << std::endl;
         ofs << "                | D|                  " << std::endl;
         ofs << "                |  |                  " << std::endl;
         ofs << "                |  |                  " << std::endl;
-        ofs << "        ______/____\____              " << std::endl;
+        ofs << "       ________/___\\_____            " << std::endl;
         ofs << std::endl;
         std::cout << "ShruberryCreated at " << _target << "_shruberry."<< std::endl;
 }
