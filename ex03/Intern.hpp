@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Inter.hpp                                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 00:10:01 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/03 00:19:53 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/03 14:06:03 by luifer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "ShruberryCreationForm.hpp"
 #include <iostream>
 #include <string>
 #include <exception>
@@ -38,8 +38,8 @@ class Intern {
                 const char* what() const throw();
         };
 
-        AForm* makeForm(const std::string &name, std::string target);
+        AForm* makeForm(const std::string &formName, const std::string &target);
 
-}
+};
 
 #endif
