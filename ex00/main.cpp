@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:35:07 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 13:31:55 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/31 12:27:40 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,23 @@
 #include <iostream>
 
 int main() {
+	try {
+		Bureaucrat falton(200, "Falton");
+		std::cout << BLUE << " 🕴🏽 🕴🏽 🕴🏽Falton Bureaucrat created with grade: " << 200 << RESET << std::endl;
+		Bureaucrat falton2(-2, "Falton2");
+		std::cout << BLUE << " 🕴🏽 🕴🏽 🕴🏽Falton2 Bureaucrat created with grade: " << -2 << RESET << std::endl;
+	}
+	catch (const Bureaucrat::GradeTooHighException& e) {
+		std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
+	}
+	catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
+	}
+	catch (...) {
+		std::cerr << RED << "An unknown error occurred." << RESET << std::endl;
+	}
+	std::cout << std::endl;
+	
 	int	startingGrade = 42;
 	try {
 		Bureaucrat pepe(startingGrade, "PePe");
@@ -37,21 +54,7 @@ int main() {
 		std::cerr << RED << "An unknown error occurred." << RESET << std::endl;
 	}
 	std::cout << std::endl;
-	try {
-		Bureaucrat falton(200, "Falton");
-		std::cout << BLUE << " 🕴🏽 🕴🏽 🕴🏽Falton Bureaucrat created with grade: " << 200 << RESET << std::endl;
-		Bureaucrat falton2(-2, "Falton2");
-		std::cout << BLUE << " 🕴🏽 🕴🏽 🕴🏽Falton2 Bureaucrat created with grade: " << -2 << RESET << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException& e) {
-		std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooHighException& e) {
-		std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
-	}
-	catch (...) {
-		std::cerr << RED << "An unknown error occurred." << RESET << std::endl;
-	}
+	
 	try {
 		Bureaucrat falton(4, "Falton");
 		std::cout << BLUE << falton <<  RESET << std::endl;

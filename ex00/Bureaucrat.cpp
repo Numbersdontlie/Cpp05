@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:30:16 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 13:46:34 by luifer           ###   ########.fr       */
+/*   Updated: 2025/07/31 12:21:11 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void Bureaucrat::increaseGrade() {
 // method to decrease the grade
 void Bureaucrat::decreaseGrade() {
     if (this->_grade >= _maxGrade)
-        throw GradeTooHighException();
+        throw GradeTooLowException();
     this->_grade++;
 }
 
