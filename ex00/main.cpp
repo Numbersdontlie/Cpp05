@@ -6,20 +6,21 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:35:07 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/31 12:27:40 by lperez-h         ###   ########.fr       */
+/*   Updated: 2025/08/01 12:41:16 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
+#include <cassert>
+#include <sstream>
+#include <vector>
 
 int main() {
 	try {
-		Bureaucrat falton(200, "Falton");
-		std::cout << BLUE << " 🕴🏽 🕴🏽 🕴🏽Falton Bureaucrat created with grade: " << 200 << RESET << std::endl;
-		Bureaucrat falton2(-2, "Falton2");
-		std::cout << BLUE << " 🕴🏽 🕴🏽 🕴🏽Falton2 Bureaucrat created with grade: " << -2 << RESET << std::endl;
-	}
+		Bureaucrat falton(-2, "Falton2");
+		std::cout << BLUE << " 🕴🏽 🕴🏽 🕴🏽Falton2 Bureaucrat created with grade: " << falton.getGrade() << RESET << std::endl;
+    }
 	catch (const Bureaucrat::GradeTooHighException& e) {
 		std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
 	}
@@ -34,7 +35,7 @@ int main() {
 	int	startingGrade = 42;
 	try {
 		Bureaucrat pepe(startingGrade, "PePe");
-		std::cout << BLUE << " 🕴🏽 🕴🏽 🕴🏽PePe Bureaucrat created with grade: " << startingGrade << RESET << std::endl;
+		std::cout << BLUE << " 🕴🏽 🕴🏽 🕴🏽PePe Bureaucrat created with grade: " << pepe.getGrade() << RESET << std::endl;
 		
 		pepe.decreaseGrade();
 		std::cout << GREEN << " 🕴🏽 🕴🏽 🕴🏽PePe's grade decreased to: " << pepe.getGrade() << RESET << std::endl;
@@ -64,9 +65,9 @@ int main() {
 		std::cout << BLUE << "After assignment operator: " << falton << RESET << std::endl;
 		std::cout << BLUE << "After assignment operator: " << falton2 << RESET << std::endl;
 		falton.increaseGrade();
-		falton2.increaseGrade();
+		falton2.decreaseGrade();
 		std::cout << GREEN << " 🕴🏽 🕴🏽 🕴🏽Falton's grade increased to: " << falton.getGrade() << RESET << std::endl;
-		std::cout << GREEN << " 🕴🏽 🕴🏽 🕴🏽Falton2's grade increased to: " << falton2.getGrade() << RESET << std::endl;
+		std::cout << GREEN << " 🕴🏽 🕴🏽 🕴🏽Falton2's grade decreased to: " << falton2.getGrade() << RESET << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
