@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 17:48:09 by luifer            #+#    #+#             */
-/*   Updated: 2025/08/01 12:49:07 by lperez-h         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:43:42 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,7 @@ int main() {
         
 		// Bureaucrat signs the Form
         PePe.signForm(formulario1);
-        std::cout << GREEN << PePe.getName() << " signed " << formulario1.getName() << RESET << std::endl;
-        PePe.increaseGrade(); // Increase the grade of the Bureaucrat
-        PePe.increaseGrade();
-        PePe.increaseGrade();
-        PePe.increaseGrade();
-        
-		// Bureaucrat tries to sign the Form again
-        PePe.signForm(formulario1);
-        std::cout << BLUE << PePe << RESET << std::endl;
+		std::cout << BLUE << formulario1 << RESET << std::endl;
     }
     catch (const std::exception &e){
         std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
@@ -45,6 +37,32 @@ int main() {
     std::cout << std::endl;
 	
     try {
+        // Create a form with low grade
+        Bureaucrat GiJoe(54, "GIJoe");
+        std::cout << BLUE << GiJoe << RESET << std::endl;
+		GiJoe.increaseGrade();
+		GiJoe.increaseGrade();
+		GiJoe.increaseGrade();
+		GiJoe.increaseGrade();
+		GiJoe.increaseGrade();
+		GiJoe.increaseGrade();
+		
+		Form formulario2("Formulario2", 50, 100);
+        std::cout << BLUE << formulario2 << RESET << std::endl;
+        
+		// Bureaucrat signs the Form
+        GiJoe.signForm(formulario2);
+        std::cout << BLUE << formulario2 << RESET << std::endl;
+    }
+    catch (const std::exception& e){
+        std::cerr << RED << "Exception: " << e.what() << RESET << std::endl;
+    }
+    catch (...) {
+        std::cerr << RED << "An unexpected exception occurred." << RESET << std::endl;
+    }
+	std::cout << std::endl;
+	
+	try {
         // Create a form with low grade
         Form formulario2("Formulario2", 151, 0); // This should throw an exception
     }

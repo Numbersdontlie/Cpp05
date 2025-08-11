@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShruberryCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:07:59 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/02 23:41:48 by luifer           ###   ########.fr       */
+/*   Updated: 2025/08/11 11:47:24 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 //Default constructor
 ShruberryCreationForm::ShruberryCreationForm() : AForm("ShruberryCreationForm", 145, 137), _target("no name") {
-    std::cout << BLUE << "ShruberryCreationForm default constructor called" << RESET << std::endl;
+    //std::cout << BLUE << "ShruberryCreationForm default constructor called" << RESET << std::endl;
 }
 
 //Parameterized constructor
 ShruberryCreationForm::ShruberryCreationForm(const std::string &target) : AForm("ShruberryCreationForm", 145, 137), _target(target) {
-    std::cout << BLUE << "ShruberryCreationForm parameterized constructor called 🌳 🌳 🌳" << RESET << std::endl;
+    //std::cout << BLUE << "ShruberryCreationForm parameterized constructor called 🌳 🌳 🌳" << RESET << std::endl;
 }
 
 //Copy constructor
 ShruberryCreationForm::ShruberryCreationForm(const ShruberryCreationForm &other) : AForm(other), _target(other._target) {
-    std::cout << BLUE << "ShruberryCreationForm copy constructor called" << RESET << std::endl;
+    //std::cout << BLUE << "ShruberryCreationForm copy constructor called" << RESET << std::endl;
 }
 
 //Assignment operator overload
 ShruberryCreationForm& ShruberryCreationForm::operator=(const ShruberryCreationForm &other){
-    std::cout << BLUE << "ShruberryCreationForm assignment operator called 🌳 🌳 🌳" << RESET << std::endl;
+    //std::cout << BLUE << "ShruberryCreationForm assignment operator called 🌳 🌳 🌳" << RESET << std::endl;
     if (this != &other) {
         this->_target = other.getTarget(); // Copy the target
     }
@@ -38,7 +38,7 @@ ShruberryCreationForm& ShruberryCreationForm::operator=(const ShruberryCreationF
 
 //Destructor
 ShruberryCreationForm::~ShruberryCreationForm(){
-    std::cout << RED << "ShruberryCreationForm destructor called" << RESET << std::endl;
+    //std::cout << RED << "ShruberryCreationForm destructor called" << RESET << std::endl;
 }
 
 //Getter

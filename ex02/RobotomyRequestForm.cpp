@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 23:39:06 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/02 23:21:12 by luifer           ###   ########.fr       */
+/*   Updated: 2025/08/11 11:46:56 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 //Default constructor
 RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45), _target("default_target") {
-    std::cout << BLUE << "RobotomyRequestForm default constructor called 🤖 🤖 🤖" << RESET << std::endl;
+    //std::cout << BLUE << "RobotomyRequestForm default constructor called 🤖 🤖 🤖" << RESET << std::endl;
 }
 
 // Parameterized constructor
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("RobotomyRequestForm", 72, 45), _target("target") {
-    std::cout << BLUE << "RobotomyRequestForm parameterized constructor called 🤖 🤖 🤖" << RESET << std::endl;
+    //std::cout << BLUE << "RobotomyRequestForm parameterized constructor called 🤖 🤖 🤖" << RESET << std::endl;
     this->_target = target;
 }
 
 // Copy constructor
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other): AForm(other), _target(other._target) {
-    std::cout << BLUE << "RobotomyRequestForm copy constructor called 🤖 🤖 🤖" << RESET << std::endl;
+    //std::cout << BLUE << "RobotomyRequestForm copy constructor called 🤖 🤖 🤖" << RESET << std::endl;
 }
 
 // Assignment operator
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
-    std::cout << BLUE << "RobotomyRequestForm assignment operator called 🤖 🤖 🤖" << RESET << std::endl;
+    //std::cout << BLUE << "RobotomyRequestForm assignment operator called 🤖 🤖 🤖" << RESET << std::endl;
     if (this != &other) {
         this->_target = other._target;
     }
@@ -39,7 +39,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 
 //Destructor
 RobotomyRequestForm::~RobotomyRequestForm() {
-    std::cout << RED << "RobotomyRequestForm destructor called 🤖 🤖 🤖" << RESET << std::endl;
+    //std::cout << RED << "RobotomyRequestForm destructor called 🤖 🤖 🤖" << RESET << std::endl;
 }
 
 

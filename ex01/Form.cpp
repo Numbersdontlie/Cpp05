@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:41:05 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 21:34:09 by luifer           ###   ########.fr       */
+/*   Updated: 2025/08/11 15:41:31 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // constructor with parameters
 Form::Form(const std::string &name, int signGrade, int execGrade): _name(name), _isSigned(false), _signGrade(signGrade), _executeGrade(execGrade) {
-    std::cout << BLUE << "Form constructed called" << RESET << std::endl;
+    //std::cout << BLUE << "Form constructed called" << RESET << std::endl;
     if (signGrade < Bureaucrat::_minGrade || execGrade < Bureaucrat::_minGrade)
         throw GradeTooHighException();
     if (signGrade > Bureaucrat::_maxGrade || execGrade > Bureaucrat::_maxGrade)
@@ -23,13 +23,13 @@ Form::Form(const std::string &name, int signGrade, int execGrade): _name(name), 
 
 // copy constructor
 Form::Form(const Form &other): _name(other._name), _isSigned(other._isSigned), _signGrade(other._signGrade), _executeGrade(other._executeGrade) {
-    std::cout << BLUE << "Form copy constructor called" << RESET << std::endl;
+    //std::cout << BLUE << "Form copy constructor called" << RESET << std::endl;
 }
 
 
 // destructor
 Form::~Form() {
-    std::cout << RED << "Form destructor called" << RESET << std::endl;
+    //std::cout << RED << "Form destructor called" << RESET << std::endl;
 }
 
 // getters

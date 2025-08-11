@@ -6,15 +6,13 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:35:07 by luifer            #+#    #+#             */
-/*   Updated: 2025/08/01 12:41:16 by lperez-h         ###   ########.fr       */
+/*   Updated: 2025/08/11 11:21:56 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
-#include <cassert>
-#include <sstream>
-#include <vector>
+#include <stdexcept>
 
 int main() {
 	try {

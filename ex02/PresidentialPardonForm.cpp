@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 23:23:55 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/01 23:31:25 by luifer           ###   ########.fr       */
+/*   Updated: 2025/08/11 11:46:38 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 // Default constructor
 PresidentialPardonForm::PresidentialPardonForm(): AForm("Presidential pardon", 25, 5) {
-    std::cout << BLUE << "PresidentialPardonForm default constructor called" << RESET << std::endl;
+    //std::cout << BLUE << "PresidentialPardonForm default constructor called" << RESET << std::endl;
     this->_target = "Default Target";
 }
 
 // Parameterized constructor
 PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("Presidential pardon", 25, 5) {
-    std::cout << BLUE << "PresidentialPardonForm parameterized constructor called" << RESET << std::endl;
+    //std::cout << BLUE << "PresidentialPardonForm parameterized constructor called" << RESET << std::endl;
     this->_target = target;
 }
 
 // Copy constructor
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other): AForm("Presidential pardon", 25, 5) {
-    std::cout << BLUE << "PresidentialPardonForm copy constructor called" << RESET << std::endl;
+    //std::cout << BLUE << "PresidentialPardonForm copy constructor called" << RESET << std::endl;
     this->_target = other._target;
 }
 
 // Assignment operator
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other) {
-    std::cout << BLUE << "PresidentialPardonForm assignment operator called" << RESET << std::endl;
+    //std::cout << BLUE << "PresidentialPardonForm assignment operator called" << RESET << std::endl;
     if (this != &other) {
         this->_target = other._target;
     }
@@ -41,7 +41,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 // Destructor
 PresidentialPardonForm::~PresidentialPardonForm() {
-    std::cout << RED << "PresidentialPardonForm destructor called" << RESET << std::endl;
+    //std::cout << RED << "PresidentialPardonForm destructor called" << RESET << std::endl;
 }
 
 // Getter for target

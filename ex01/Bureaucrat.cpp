@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:30:16 by luifer            #+#    #+#             */
-/*   Updated: 2025/06/26 21:37:09 by luifer           ###   ########.fr       */
+/*   Updated: 2025/08/11 15:41:57 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // constructor with parameters
 Bureaucrat::Bureaucrat(int grade, const std::string& name): _name(name), _grade(grade) {
-    std::cout << BLUE << "Bureaucrat constructor called." << RESET << std::endl;
+    //std::cout << BLUE << "Bureaucrat constructor called." << RESET << std::endl;
     if (grade < _minGrade)
         throw GradeTooHighException();
     else if (grade > _maxGrade)
@@ -24,12 +24,12 @@ Bureaucrat::Bureaucrat(int grade, const std::string& name): _name(name), _grade(
 
 // copy constructor
 Bureaucrat::Bureaucrat(const Bureaucrat& other): _name(other._name), _grade(other._grade) {
-    std::cout << GREEN << "Bureaucrat copy constructor called." << RESET << std::endl;
+    //std::cout << GREEN << "Bureaucrat copy constructor called." << RESET << std::endl;
 }
 
 // copy assignment operator
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
-    std::cout << GREEN << "Bureaucrat copy assignment operator called." << RESET << std::endl;
+    //std::cout << GREEN << "Bureaucrat copy assignment operator called." << RESET << std::endl;
     if (this != &other) {
         this->_grade = other._grade; // to update the grade not the name which is const
     }
@@ -38,7 +38,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 
 // destructor
 Bureaucrat::~Bureaucrat() {
-    std::cout << RED << "Bureaucrat destructor called... BOOM!" << RESET << std::endl;
+    //std::cout << RED << "Bureaucrat destructor called... BOOM!" << RESET << std::endl;
 }
 
 //Getters
@@ -68,7 +68,7 @@ void Bureaucrat::decreaseGrade() {
 // method to sign a form from Bureaucrat class
 void Bureaucrat::signForm(Form& form) {
     try {
-        form.beSigned(*this);
+		form.beSigned(*this);
         std::cout << BLUE << _name << " signs " << form.getName() << "." << RESET << std::endl;
     }
     catch (const std::exception &e) {

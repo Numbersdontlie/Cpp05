@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luifer <luifer@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 13:52:20 by luifer            #+#    #+#             */
-/*   Updated: 2025/07/02 22:54:03 by luifer           ###   ########.fr       */
+/*   Updated: 2025/08/11 12:36:05 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ class AForm {
             public:
                 const char* what() const throw();
         };
-        class formNotSignedException: public std::exception {
+        class FormNotSignedException: public std::exception {
             public:
                 const char* what() const throw();
         };
