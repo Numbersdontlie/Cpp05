@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:41:05 by luifer            #+#    #+#             */
-/*   Updated: 2025/08/11 15:41:31 by lperez-h         ###   ########.fr       */
+/*   Updated: 2025/08/12 15:44:44 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ Form::Form(const std::string &name, int signGrade, int execGrade): _name(name), 
 // copy constructor
 Form::Form(const Form &other): _name(other._name), _isSigned(other._isSigned), _signGrade(other._signGrade), _executeGrade(other._executeGrade) {
     //std::cout << BLUE << "Form copy constructor called" << RESET << std::endl;
+	if (other._signGrade < Bureaucrat::_minGrade || other._executeGrade < Bureaucrat::_minGrade)
+        throw GradeTooHighException();
+    if (other._signGrade > Bureaucrat::_maxGrade || other._executeGrade > Bureaucrat::_maxGrade)
+        throw GradeTooLowException();
 }
 
 
@@ -51,9 +55,10 @@ int Form::getExecuteGrade() const {
 
 // methods for the Form class
 void Form::beSigned(const Bureaucrat &bureaucrat) {
-    if (bureaucrat.getGrade() > _signGrade)
-        throw GradeTooLowException();
-    this->_isSigned = true;
+    if (bureaucrat.getGrade() >= _signGrade)
+		this->_isSigned = true;
+	else 
+		throw GradeTooLowException();
 }
 
 const char* Form::GradeTooHighException::what() const throw() {

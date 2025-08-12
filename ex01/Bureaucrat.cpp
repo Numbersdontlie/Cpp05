@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:30:16 by luifer            #+#    #+#             */
-/*   Updated: 2025/08/11 15:41:57 by lperez-h         ###   ########.fr       */
+/*   Updated: 2025/08/12 13:17:13 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,21 @@ Bureaucrat::Bureaucrat(int grade, const std::string& name): _name(name), _grade(
 
 // copy constructor
 Bureaucrat::Bureaucrat(const Bureaucrat& other): _name(other._name), _grade(other._grade) {
-    //std::cout << GREEN << "Bureaucrat copy constructor called." << RESET << std::endl;
+    if (other._grade < _minGrade)
+		throw GradeTooHighException();
+	else if(other._grade > _maxGrade)
+		throw GradeTooLowException();
+	//std::cout << GREEN << "Bureaucrat copy constructor called." << RESET << std::endl;
 }
 
 // copy assignment operator
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
     //std::cout << GREEN << "Bureaucrat copy assignment operator called." << RESET << std::endl;
-    if (this != &other) {
+    if (other._grade < _minGrade)
+		throw GradeTooHighException();
+	else if(other._grade > _maxGrade)
+		throw GradeTooLowException();
+	if (this != &other) {
         this->_grade = other._grade; // to update the grade not the name which is const
     }
     return *this;
