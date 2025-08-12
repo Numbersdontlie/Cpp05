@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:30:16 by luifer            #+#    #+#             */
-/*   Updated: 2025/08/11 12:36:58 by lperez-h         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:00:35 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,20 @@ Bureaucrat::Bureaucrat(int grade, const std::string& name): _name(name), _grade(
 // copy constructor
 Bureaucrat::Bureaucrat(const Bureaucrat& other): _name(other._name), _grade(other._grade) {
     //std::cout << GREEN << "Bureaucrat copy constructor called." << RESET << std::endl;
+	if (other._grade < _minGrade)
+		throw GradeTooHighException();
+	else if(other._grade > _maxGrade)
+		throw GradeTooLowException();
 }
 
 // copy assignment operator
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
     //std::cout << GREEN << "Bureaucrat copy assignment operator called." << RESET << std::endl;
-    if (this != &other) {
+    if (other._grade < _minGrade)
+		throw GradeTooHighException();
+	else if(other._grade > _maxGrade)
+		throw GradeTooLowException();
+	if (this != &other) {
         this->_grade = other._grade; // to update the grade not the name which is const
     }
     return *this;
@@ -70,12 +78,12 @@ void Bureaucrat::executeForm(const AForm &form) const {
         if(form.getSigned() == false){
 			throw AForm::FormNotSignedException();
 		}
-		else if (form.getExecuteGrade() < this->getGrade()) {
-			throw AForm::GradeTooLowException();
-		}
-		else {
+		else if (form.getExecuteGrade() >= this->getGrade()) {
 			form.execute();
         	std::cout << GREEN << this->_name << " executed " << form.getName() << "." << RESET << std::endl;	
+		}
+		else {
+			throw AForm::GradeTooLowException();
 		}
     } catch (const std::exception& e) {
         std::cerr << RED << this->_name << " couldn't execute " << form.getName() << " because: " << e.what() << RESET << std::endl;
