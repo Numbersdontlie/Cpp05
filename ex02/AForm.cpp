@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:41:05 by luifer            #+#    #+#             */
-/*   Updated: 2025/08/12 17:00:09 by lperez-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:06:51 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,43 +23,47 @@ AForm::AForm(const std::string &name, int signGrade, int execGrade): _name(name)
 
 // copy constructor
 AForm::AForm(const AForm &other): _name(other._name), _isSigned(other._isSigned), _signGrade(other._signGrade), _executeGrade(other._executeGrade) {
-    //std::cout << BLUE << "Form copy constructor called" << RESET << std::endl;
-	if (other._signGrade < Bureaucrat::_minGrade || other._executeGrade < Bureaucrat::_minGrade)
-        throw GradeTooHighException();
-    if (other._signGrade > Bureaucrat::_maxGrade || other._executeGrade > Bureaucrat::_maxGrade)
-        throw GradeTooLowException();
+    std::cout << BLUE << "Form copy constructor called" << RESET << std::endl;
 }
 
 
 // destructor
 AForm::~AForm() {
-    //std::cout << RED << "Form destructor called" << RESET << std::endl;
+    std::cout << RED << "Form destructor called" << RESET << std::endl;
 }
 
 // getters
 const std::string& AForm::getName() const {
-    return _name;
+    return this->_name;
 }
 
 bool AForm::getSigned() const {
-    return _isSigned;
+    return this->_isSigned;
 }
 
 int AForm::getSignGrade() const {
-    return _signGrade;
+    return this->_signGrade;
 }
 
 int AForm::getExecuteGrade() const {
-    return _executeGrade;
+    return this->_executeGrade;
 }
 
 // methods for the Form class
 void AForm::beSigned(const Bureaucrat &bureaucrat) {
-    if (bureaucrat.getGrade() >= _signGrade)
+    if (bureaucrat.getGrade() < this->_signGrade)
         this->_isSigned = true;
 	else 
 		throw GradeTooLowException();
-    
+}
+
+void AForm::beExecuted(const Bureaucrat &exec) const {
+    if (!this->_isSigned)
+        throw FormNotSignedException();
+    else if (exec.getGrade() > this->_executeGrade)
+        throw GradeTooLowException();
+	else 
+		this->execute();
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {

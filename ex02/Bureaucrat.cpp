@@ -6,7 +6,7 @@
 /*   By: lperez-h <lperez-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 00:30:16 by luifer            #+#    #+#             */
-/*   Updated: 2025/08/12 16:00:35 by lperez-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 12:13:20 by lperez-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,23 +68,15 @@ void Bureaucrat::increaseGrade() {
 // method to decrease the grade
 void Bureaucrat::decreaseGrade() {
     if (this->_grade >= _maxGrade)
-        throw GradeTooHighException();
+        throw GradeTooLowException();
     this->_grade++;
 }
 
 // method to execute a form from Bureaucrat class
 void Bureaucrat::executeForm(const AForm &form) const {
     try {
-        if(form.getSigned() == false){
-			throw AForm::FormNotSignedException();
-		}
-		else if (form.getExecuteGrade() >= this->getGrade()) {
-			form.execute();
-        	std::cout << GREEN << this->_name << " executed " << form.getName() << "." << RESET << std::endl;	
-		}
-		else {
-			throw AForm::GradeTooLowException();
-		}
+        form.beExecuted(*this);
+		std::cout << BLUE << this->_name << "signed " << form.getName() << " ." << RESET << std::endl;
     } catch (const std::exception& e) {
         std::cerr << RED << this->_name << " couldn't execute " << form.getName() << " because: " << e.what() << RESET << std::endl;
     }
